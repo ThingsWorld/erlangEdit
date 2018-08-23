@@ -34,3 +34,8 @@ pwd			%% 打印出当前的目录路径
 rm -rf xxx	%% 强制删除某个xxx文件,(注意使用这个命令之前,你要删除的文件,删除了,再也找不到这个文件)
 ```
 
+%% 如何恢复丢弃的 git stash clean 或 git stash drop 数据
+ git fsck --unreachable         %% 使用参数 --unreachable，git-fsck 显示出所有不可访问的对象。
+ git show xxxxxxxxx             %% 显示commint的log文件修改
+ git stash apply xxxxxxxxx      %% 恢复丢弃的 git stash 数据
+ %% git 会周期性地执行它的垃圾回收程序（gc）
